@@ -2,6 +2,7 @@ import java.util.Scanner;
 
 public class LexicalTwistPuzzle {
     public static void main(String[] args) {
+
         Scanner sc = new Scanner(System.in);
 
         System.out.println("Lexical Twist Puzzle");
@@ -30,6 +31,24 @@ public class LexicalTwistPuzzle {
                     .replaceAll("[aeiou]", "@");
 
             System.out.println(transformed);
+
+        } else {
+
+            String combined = (firstWord + secondWord).toUpperCase();
+
+            int vowels = 0;
+            int consonants = 0;
+
+            for (char ch : combined.toCharArray()) {
+                if ("AEIOU".indexOf(ch) != -1) {
+                    vowels++;
+                } else if (Character.isLetter(ch)) {
+                    consonants++;
+                }
+            }
+
+            System.out.println("Vowel Count: " + vowels);
+            System.out.println("Consonant Count: " + consonants);
         }
     }
 }
