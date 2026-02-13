@@ -1,11 +1,10 @@
 import java.util.Scanner;
 
 public class LexicalTwistPuzzle {
-
     public static void main(String[] args) {
-
         Scanner sc = new Scanner(System.in);
 
+        System.out.println("Lexical Twist Puzzle");
         System.out.print("Enter first word: ");
         String firstWord = sc.nextLine();
 
@@ -25,8 +24,12 @@ public class LexicalTwistPuzzle {
         String reversed = new StringBuilder(firstWord).reverse().toString();
 
         if (reversed.equalsIgnoreCase(secondWord)) {
-            System.out.println("Words are reverse of each other");
-        }
 
+            String transformed = reversed
+                    .toLowerCase()
+                    .replaceAll("[aeiou]", "@");
+
+            System.out.println(transformed);
+        }
     }
 }
